@@ -1,0 +1,16 @@
+[general]
+name=Call Surfer
+qgisMinimumVersion=3.4
+description=Call Surfer in QGIS
+about=Call Surfer in QGIS
+version=0.3.0
+tags=surfer
+icon=images/icon.png
+experimental=False
+deprecated=False
+author=liuxspro
+email=liuxspro@gmail.com
+homepage=https://github.com/liuxspro/qgis-plugin-callsurfer
+tracker=https://github.com/liuxspro/qgis-plugin-callsurfer/issues
+repository=https://github.com/liuxspro/qgis-plugin-callsurfer
+changelog=
