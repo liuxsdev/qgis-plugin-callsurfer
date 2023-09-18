@@ -1,6 +1,7 @@
 import win32com.client
 from qgis.PyQt import QtWidgets
 from qgis.PyQt.QtCore import QThread, pyqtSignal
+from qgis.core import QgsMapLayerProxyModel
 
 from .ui.Grid import Ui_Form
 
@@ -38,6 +39,24 @@ class GridDialog(QtWidgets.QDialog, Ui_Form):
         self.app = None
         self.check_surfer = None
         self.connect_surfer()
+        self.mMapLayerComboBox.setFilters(QgsMapLayerProxyModel.PointLayer)
+        self.set_layer()
+        self.mMapLayerComboBox.layerChanged.connect(self.set_layer)
+        self.pushButton.clicked.connect(self.show_info)
+
+    def set_layer(self):
+        pl = self.mMapLayerComboBox.currentLayer()
+        # print("选中", pl)
+        self.mFieldComboBox.setLayer(pl)
+
+    def show_info(self):
+        pl = self.mMapLayerComboBox.currentLayer()
+        fd = self.mFieldComboBox.currentField()
+        features = pl.getFeatures()
+        for f in features:
+            geom = f.geometry()
+            point = geom.asPoint()
+            print(point.x(), point.y(), f.attribute(fd))
 
     def set_surfer(self, app: Surfer):
         self.app = app

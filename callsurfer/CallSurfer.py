@@ -25,6 +25,7 @@ class CallSurferPlugin:
 
     def open(self):
         dlg = GridDialog()
+        dlg.show()
         dlg.exec_()
 
     def unload(self):

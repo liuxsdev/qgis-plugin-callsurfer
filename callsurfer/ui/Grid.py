@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(803, 594)
+        Form.resize(782, 594)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
         Form.setFont(font)
@@ -24,13 +24,29 @@ class Ui_Form(object):
         self.groupBox.setObjectName("groupBox")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.groupBox)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.mFeatureListComboBox = QgsFeatureListComboBox(self.groupBox)
-        self.mFeatureListComboBox.setObjectName("mFeatureListComboBox")
-        self.verticalLayout_2.addWidget(self.mFeatureListComboBox)
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.label = QtWidgets.QLabel(self.groupBox)
+        self.label.setObjectName("label")
+        self.horizontalLayout.addWidget(self.label)
+        self.mMapLayerComboBox = QgsMapLayerComboBox(self.groupBox)
+        self.mMapLayerComboBox.setObjectName("mMapLayerComboBox")
+        self.horizontalLayout.addWidget(self.mMapLayerComboBox)
+        self.label_2 = QtWidgets.QLabel(self.groupBox)
+        self.label_2.setObjectName("label_2")
+        self.horizontalLayout.addWidget(self.label_2)
+        self.mFieldComboBox = QgsFieldComboBox(self.groupBox)
+        self.mFieldComboBox.setObjectName("mFieldComboBox")
+        self.horizontalLayout.addWidget(self.mFieldComboBox)
+        self.horizontalLayout.setStretch(1, 8)
+        self.horizontalLayout.setStretch(3, 2)
+        self.verticalLayout_2.addLayout(self.horizontalLayout)
         self.verticalLayout.addWidget(self.groupBox)
-        spacerItem = QtWidgets.QSpacerItem(
-            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding
-        )
+        self.pushButton = QtWidgets.QPushButton(Form)
+        self.pushButton.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.pushButton.setObjectName("pushButton")
+        self.verticalLayout.addWidget(self.pushButton)
+        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem)
         self.label_surfer_connect_status = QtWidgets.QLabel(Form)
         self.label_surfer_connect_status.setObjectName("label_surfer_connect_status")
@@ -43,7 +59,9 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.groupBox.setTitle(_translate("Form", "Data"))
+        self.label.setText(_translate("Form", "选择点图层"))
+        self.label_2.setText(_translate("Form", "Z 字段"))
+        self.pushButton.setText(_translate("Form", "test"))
         self.label_surfer_connect_status.setText(_translate("Form", "Status"))
-
-
-from qgsfeaturelistcombobox import QgsFeatureListComboBox
+from qgsfieldcombobox import QgsFieldComboBox
+from qgsmaplayercombobox import QgsMapLayerComboBox

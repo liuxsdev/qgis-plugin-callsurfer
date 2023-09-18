@@ -6,7 +6,7 @@
             <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>803</width>
+                <width>782</width>
                 <height>594</height>
             </rect>
         </property>
@@ -26,9 +26,43 @@
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_2">
                         <item>
-                            <widget class="QgsFeatureListComboBox" name="mFeatureListComboBox"/>
+                            <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,8,0,2">
+                                <item>
+                                    <widget class="QLabel" name="label">
+                                        <property name="text">
+                                            <string>选择点图层</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QgsMapLayerComboBox" name="mMapLayerComboBox"/>
+                                </item>
+                                <item>
+                                    <widget class="QLabel" name="label_2">
+                                        <property name="text">
+                                            <string>Z 字段</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QgsFieldComboBox" name="mFieldComboBox"/>
+                                </item>
+                            </layout>
                         </item>
                     </layout>
+                </widget>
+            </item>
+            <item>
+                <widget class="QPushButton" name="pushButton">
+                    <property name="maximumSize">
+                        <size>
+                            <width>60</width>
+                            <height>16777215</height>
+                        </size>
+                    </property>
+                    <property name="text">
+                        <string>test</string>
+                    </property>
                 </widget>
             </item>
             <item>
@@ -55,9 +89,14 @@
     </widget>
     <customwidgets>
         <customwidget>
-            <class>QgsFeatureListComboBox</class>
+            <class>QgsFieldComboBox</class>
             <extends>QComboBox</extends>
-            <header>qgsfeaturelistcombobox.h</header>
+            <header>qgsfieldcombobox.h</header>
+        </customwidget>
+        <customwidget>
+            <class>QgsMapLayerComboBox</class>
+            <extends>QComboBox</extends>
+            <header>qgsmaplayercombobox.h</header>
         </customwidget>
     </customwidgets>
     <resources/>
