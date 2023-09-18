@@ -46,7 +46,9 @@ class Ui_Form(object):
         self.pushButton.setMaximumSize(QtCore.QSize(60, 16777215))
         self.pushButton.setObjectName("pushButton")
         self.verticalLayout.addWidget(self.pushButton)
-        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem = QtWidgets.QSpacerItem(
+            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding
+        )
         self.verticalLayout.addItem(spacerItem)
         self.label_surfer_connect_status = QtWidgets.QLabel(Form)
         self.label_surfer_connect_status.setObjectName("label_surfer_connect_status")
@@ -63,5 +65,7 @@ class Ui_Form(object):
         self.label_2.setText(_translate("Form", "Z 字段"))
         self.pushButton.setText(_translate("Form", "test"))
         self.label_surfer_connect_status.setText(_translate("Form", "Status"))
+
+
 from qgsfieldcombobox import QgsFieldComboBox
 from qgsmaplayercombobox import QgsMapLayerComboBox
