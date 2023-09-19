@@ -6,7 +6,7 @@
             <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>782</width>
+                <width>614</width>
                 <height>594</height>
             </rect>
         </property>
@@ -16,9 +16,9 @@
             </font>
         </property>
         <property name="windowTitle">
-            <string>Form</string>
+            <string>Call Surfer</string>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout">
+        <layout class="QVBoxLayout" name="verticalLayout" stretch="1,8,0,4,0">
             <item>
                 <widget class="QGroupBox" name="groupBox">
                     <property name="title">
@@ -48,6 +48,18 @@
                                     <widget class="QgsFieldComboBox" name="mFieldComboBox"/>
                                 </item>
                             </layout>
+                        </item>
+                    </layout>
+                </widget>
+            </item>
+            <item>
+                <widget class="QGroupBox" name="groupBox_2">
+                    <property name="title">
+                        <string>Preview Data</string>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_3">
+                        <item>
+                            <widget class="QTableWidget" name="data_tableWidget"/>
                         </item>
                     </layout>
                 </widget>
