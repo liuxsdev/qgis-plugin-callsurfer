@@ -1,116 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-    <class>Form</class>
-    <widget class="QWidget" name="Form">
-        <property name="geometry">
-            <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>614</width>
-                <height>594</height>
-            </rect>
-        </property>
-        <property name="font">
-            <font>
-                <family>微软雅黑</family>
-            </font>
-        </property>
-        <property name="windowTitle">
-            <string>Call Surfer</string>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout" stretch="1,8,0,4,0">
-            <item>
-                <widget class="QGroupBox" name="groupBox">
-                    <property name="title">
-                        <string>Data</string>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_2">
-                        <item>
-                            <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,8,0,2">
-                                <item>
-                                    <widget class="QLabel" name="label">
-                                        <property name="text">
-                                            <string>选择点图层</string>
-                                        </property>
-                                    </widget>
-                                </item>
-                                <item>
-                                    <widget class="QgsMapLayerComboBox" name="mMapLayerComboBox"/>
-                                </item>
-                                <item>
-                                    <widget class="QLabel" name="label_2">
-                                        <property name="text">
-                                            <string>Z 字段</string>
-                                        </property>
-                                    </widget>
-                                </item>
-                                <item>
-                                    <widget class="QgsFieldComboBox" name="mFieldComboBox"/>
-                                </item>
-                            </layout>
-                        </item>
-                    </layout>
-                </widget>
-            </item>
-            <item>
-                <widget class="QGroupBox" name="groupBox_2">
-                    <property name="title">
-                        <string>Preview Data</string>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_3">
-                        <item>
-                            <widget class="QTableWidget" name="data_tableWidget"/>
-                        </item>
-                    </layout>
-                </widget>
-            </item>
-            <item>
-                <widget class="QPushButton" name="pushButton">
-                    <property name="maximumSize">
-                        <size>
-                            <width>60</width>
-                            <height>16777215</height>
-                        </size>
-                    </property>
-                    <property name="text">
-                        <string>test</string>
-                    </property>
-                </widget>
-            </item>
-            <item>
-                <spacer name="verticalSpacer">
-                    <property name="orientation">
-                        <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                        <size>
-                            <width>20</width>
-                            <height>40</height>
-                        </size>
-                    </property>
-                </spacer>
-            </item>
-            <item>
-                <widget class="QLabel" name="label_surfer_connect_status">
-                    <property name="text">
-                        <string>Status</string>
-                    </property>
-                </widget>
-            </item>
-        </layout>
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>614</width>
+    <height>594</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Call Surfer</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="1,8,0,0,0,4,0">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Data</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,8,0,2">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>选择点图层</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QgsMapLayerComboBox" name="mMapLayerComboBox"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Z 字段</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QgsFieldComboBox" name="mFieldComboBox"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
-    <customwidgets>
-        <customwidget>
-            <class>QgsFieldComboBox</class>
-            <extends>QComboBox</extends>
-            <header>qgsfieldcombobox.h</header>
-        </customwidget>
-        <customwidget>
-            <class>QgsMapLayerComboBox</class>
-            <extends>QComboBox</extends>
-            <header>qgsmaplayercombobox.h</header>
-        </customwidget>
-    </customwidgets>
-    <resources/>
-    <connections/>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Preview Data</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QTableWidget" name="data_tableWidget"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkBox">
+     <property name="text">
+      <string>Surfer Visiable</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="pushButton">
+     <property name="maximumSize">
+      <size>
+       <width>60</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Load</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="text">
+      <string>Grid</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_surfer_connect_status">
+     <property name="text">
+      <string>Status</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsFieldComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qgsfieldcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QgsMapLayerComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qgsmaplayercombobox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
 </ui>

@@ -1,4 +1,5 @@
 from enum import Enum
+from pathlib import Path
 
 import win32com.client
 
@@ -31,3 +32,29 @@ class Surfer:
         except Exception as e:
             # 如果创建 COM 对象时发生异常，打印错误消息
             print("无法绑定 COM 对象:", str(e))
+
+    def grid(self, data_path: Path, algorithm: SrfGridAlgorithm, extend):
+        # self.createDoc()
+        print(extend)
+        plot = self.app.Documents.Add(1)
+        self.app.Visible = True
+        datafile = str(data_path)
+        grd_file = str(data_path.parent.joinpath("grid_data.grd"))
+        self.app.GridData(
+            DataFile=datafile,
+            Algorithm=algorithm,
+            NumRows=150,
+            NumCols=150,
+            ShowReport=False,
+            OutGrid=grd_file,
+        )
+        map_frame = plot.Shapes.AddContourMap(GridFileName=grd_file)
+        map_frame.SetLimits(
+            xMin=extend["xmin"],
+            xMax=extend["xmax"],
+            yMin=extend["ymin"],
+            yMax=extend["ymax"],
+        )
+        map_frame.xLength = 6
+        map_frame.yLength = 4
+        map_frame.Overlays(1)

@@ -1,11 +1,8 @@
-from pathlib import Path
-
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
 
 from .grid_dialog import GridDialog
-
-Plugin_DIR = Path(__file__).parent
+from .utils import Plugin_DIR
 
 
 class CallSurferPlugin:
